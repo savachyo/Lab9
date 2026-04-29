@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Базові налаштування
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Твій фірмовий чорно-червоний градієнт */
+    background: linear-gradient(135deg, #0a0a0a 0%, #4a0000 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffcccc;
+    /* Вендорні префікси для підтримки старих браузерів (вимога ЛР9) */
+    -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
+    -moz-transition: color 0.3s ease, text-shadow 0.3s ease;
+    -o-transition: color 0.3s ease, text-shadow 0.3s ease;
+    -ms-transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #ff1a1a;
+    text-shadow: 0 0 8px rgba(255, 26, 26, 0.6);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Шапка сайту (Header)
+   ========================================================================== */
+.main-header {
+    background-color: rgba(5, 5, 5, 0.85); /* Напівпрозорий чорний */
+    border-bottom: 2px solid #b30000;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Розмиття фону (Glassmorphism) */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-list a {
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.nav-list a:hover {
+    color: #ff1a1a;
+}
+
+/* ==========================================================================
+   Основний контент
+   ========================================================================== */
+.content-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero-section {
+    text-align: center;
+    background-color: rgba(15, 15, 15, 0.75);
+    border: 1px solid rgba(255, 26, 26, 0.3);
+    border-radius: 16px;
+    padding: 60px 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    -webkit-transition: transform 0.3s ease, border-color 0.3s ease;
+    -moz-transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-section:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 15px 40px rgba(200, 0, 0, 0.4);
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #dddddd;
+}
+
+/* ==========================================================================
+   Кнопки
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #ff1a1a;
+    color: #ffffff !important;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #cc0000;
+    box-shadow: 0 0 20px rgba(255, 26, 26, 0.8);
+    text-shadow: none;
+}
+
+/* ==========================================================================
+   Підвал сайту (Footer)
+   ========================================================================== */
+.main-footer {
+    background-color: rgba(5, 5, 5, 0.95);
+    border-top: 2px solid #ff1a1a;
+    color: #cccccc;
+    padding: 25px 0;
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-info a {
+    color: #ffcccc;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Адаптивність (Медіа-запити)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+    }
+}
